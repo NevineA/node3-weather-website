@@ -1,4 +1,4 @@
-console.log('client side java script is loaded')
+console.log('client side java script is loaded!')
 
 
 
