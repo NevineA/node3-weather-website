@@ -5,7 +5,8 @@ const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000 // PORT is heroku env variable
+
 //Define paths for Experess config 
 const PublicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -38,8 +39,7 @@ app.get('/help',(rep, res)=>{ // hbs handler
         message : 'This is some helpful text. ',
         title : 'Help',
         name:'N Mekhael'
-    })
-})
+    })})
 
 
 app.get('/weather',(req, res)=>{
@@ -66,13 +66,6 @@ app.get('/weather',(req, res)=>{
         }) 
     })    
 })
-
-// app.get('/products',(req, res)=>{
-//     console.log('Nevine req.query :',req.query.search)
-//     res.send({
-//         products: []    
-//     })
-// })
 
 app.get('/help/*', (req, res)=>{
     res.render('404', {

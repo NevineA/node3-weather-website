@@ -25,4 +25,4 @@ weatherForm.addEventListener('submit', (e) => {
         })  
     })
 })
-// old code http://localhost:3000/weather/?address='+location
+// old code for fetch  http://localhost:3000/weather/?address='+location
