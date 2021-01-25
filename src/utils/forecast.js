@@ -17,11 +17,13 @@ const forecast = ({latitude,longitude}, callback) =>{
             callback('unable to connect to weather API!', undefined)
         }else if(response.body.error){
              callback('unable to find location weather!', undefined) 
-        }else{       
+        }else{   
+            console.log (response.body)   
              callback(undefined, {
                             currentTemp :response.body.current.temperature ,
                             feelsLike: response.body.current.feelslike,
-                            wetherDes: response.body.current.weather_descriptions[0] }
+                            wetherDes: response.body.current.weather_descriptions[0],
+                            humidity : response.body.current.humidity }
                 )
        }        
     })
