@@ -3,7 +3,7 @@ console.log('client side java script is loaded!')
 
 
 const weatherForm = document.querySelector('form')
-const search = document.querySelector('input')
+const search      = document.querySelector('input')
 const message1 = document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2')
 
@@ -18,8 +18,10 @@ weatherForm.addEventListener('submit', (e) => {
             if(data.error){
                 message1.textContent = data.error
             }else{
-                message1.textContent = data.location 
-                message2.textContent = data.forcast.currentTemp
+                message1.textContent = "Forcast for location:  "+data.location 
+                message2.textContent = "Current temprature :"+ data.forcast.currentTemp + "C . "+
+                                      " It feels Like " +data.forcast.feelsLike+ " . It's"+ data.forcast.wetherDes  
+
                
             }    
         })  
